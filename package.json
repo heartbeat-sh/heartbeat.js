@@ -1,5 +1,5 @@
 {
-  "name": "heartbeat.js",
+  "name": "heartbeat.sh",
   "version": "1.0.0",
   "description": "A js client library for heartbeat.sh",
   "main": "index.js",
