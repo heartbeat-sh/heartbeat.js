@@ -17,5 +17,8 @@
     "heartbeats"
   ],
   "author": "heartbeat.sh",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
 }
