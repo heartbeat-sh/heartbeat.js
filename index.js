@@ -1,7 +1,6 @@
-import axios from 'axios'
+const axios = require('axios')
 
-
-export default {
+module.exports = {
     HeartbeatClient: class {
         constructor({subdomain}) {
             if(!subdomain) {
