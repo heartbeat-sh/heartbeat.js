@@ -1,35 +1,32 @@
 const axios = require('axios')
 
-module.exports = {
-    HeartbeatClient: class {
-        constructor({subdomain}) {
-            if(!subdomain) {
-                throw "Please provide a subdomain in your config!"
-            }
+const proto = 'https'
+const host = 'heartbeat.sh'
 
-            this.config = {
-                subdomain: subdomain
-            }
-
-            this.proto = 'https'
-            this.host = 'heartbeat.sh'
+module.exports = class HeartbeatClient {
+    constructor({subdomain}) {
+        if (!subdomain) {
+            throw "Please provide a subdomain in your config!"
         }
-
-        SendHeartbeat(name, warning, error) {
-            let query = ''
-            if(warning && typeof warning == "number") {
-                query = '?warning=' + parseInt(warning)
-            }
-            if(error && typeof error == "number") {
-                query += query ? '&' : '?'
-                query += 'error=' + parseInt(error)
-            }
-            let url = `${this.proto}'://'${this.host}/${name}${query}`
-
-            return axios({
-                method: 'post',
-                url: url
-            })
+        this.config = {
+            subdomain: subdomain
         }
+    }
+
+    SendHeartbeat(name, warning, error) {
+        let query = ''
+        if (warning && typeof warning == "number") {
+            query = '?warning=' + parseInt(warning)
+        }
+        if (error && typeof error == "number") {
+            query += query ? '&' : '?'
+            query += 'error=' + parseInt(error)
+        }
+        let url = `${proto}://${this.config.subdomain}.${host}/beat/${name}${query}`
+
+        return axios({
+            method: 'post',
+            url: url,
+        })
     }
 }
