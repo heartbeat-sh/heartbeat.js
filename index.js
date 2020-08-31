@@ -13,7 +13,7 @@ module.exports = class HeartbeatClient {
         }
     }
 
-    SendHeartbeat(name, warning, error) {
+    async SendHeartbeat(name, warning, error) {
         let query = ''
         if (warning && typeof warning == "number") {
             query = '?warning=' + parseInt(warning)
