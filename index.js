@@ -29,4 +29,13 @@ module.exports = class HeartbeatClient {
             url: url,
         })
     }
+
+    async DeleteHeartbeat(name) {
+        let url = `${proto}://${this.config.subdomain}.${host}/beat/${name}`
+
+        return axios({
+            method: 'delete',
+            url: url,
+        })
+    }
 }
