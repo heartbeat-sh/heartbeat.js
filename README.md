@@ -16,7 +16,7 @@ const myClient = new heartbeatClient({subdomain: "example"})
 // Send a heartbeat:
 myClient.SendHeartbeat("example:js", secondsPerDay + 2 * secondsPerHour, secondsPerDay * 2)
 
-//Delete a heartbeat
+// Delete a heartbeat
 myClient.DeleteHeartbeat("deleteme")
 
 ```
