@@ -16,4 +16,5 @@ myClient.SendHeartbeat("example:js", secondsPerDay + 2 * secondsPerHour, seconds
 
 ```
 
-
+## Links
+- npm: https://www.npmjs.com/package/heartbeat-sh
