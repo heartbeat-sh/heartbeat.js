@@ -13,7 +13,7 @@ const secondsPerHour = 3600
 
 const myClient = new heartbeatClient({subdomain: "example"})
 
-// Send a heartbeat:
+// Send a heartbeat
 myClient.SendHeartbeat("example:js", secondsPerDay + 2 * secondsPerHour, secondsPerDay * 2)
 
 // Delete a heartbeat
